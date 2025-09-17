@@ -8,11 +8,6 @@ if [ "$ZYGISK_ENABLED" = false ] && [ "$FLAVOR" = "zygisk" ]; then
   exit 1
 fi
 
-if [ "$ZYGISK_ENABLED" = true ] && [ "$FLAVOR" = "riru" ]; then
-  log -p w -t "Sui" "Zygisk is enabled, skip riru-flavor script"
-  exit 1
-fi
-
 MAGISK_VER_CODE=$(magisk -V)
 if [ "$MAGISK_VER_CODE" -ge 21000 ]; then
   MAGISK_PATH="$(magisk --path)/.magisk/modules/$MODULE_ID"

@@ -5,15 +5,11 @@ ext {
     gitCommitCount = Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
 
     moduleLibraryName = "sui"
-    moduleMinRiruApiVersion = 25
-    moduleMinRiruVersionName = "v25.0.0"
-    moduleRiruApiVersion = 25
 
-    riruModuleId = "riru-sui"
     zygiskModuleId = "zygisk-sui"
 
-    moduleName = "Sui"
-    moduleAuthor = "Rikka"
+    moduleName = "ShiUi"
+    moduleAuthor = "Rikka, PKQ&baaad"
     moduleDescription = "Modern superuser interface implementation."
     moduleVersionMinor = 5
     moduleVersionPatch = 1
