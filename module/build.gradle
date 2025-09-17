@@ -47,7 +47,7 @@ android {
                 cmake {
                     arguments "-DFLAVOR=zygisk",
                             "-DZYGISK_MODULE_ID:STRING=\"$zygiskModuleId\"",
-                            "-DANDROID_STL=none"
+                            "-DANDROID_STL=c++_static"
 
                 }
             }
