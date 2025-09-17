@@ -138,7 +138,7 @@ afterEvaluate {
                         version    : moduleVersion,
                         versionCode: moduleVersionCode.toString(),
                         author     : moduleAuthor,
-                        description: moduleDescription + " " + "Requires Zygisk enabled. DO NOT add SystemUI and Settings to DenyList." :
+                        description: moduleDescription + " " + "Requires Zygisk enabled. DO NOT add SystemUI and Settings to DenyList.",
                         updateJson : "https://rikkaapps.github.io/release/sui_zygisk.json",
                 ])
                 filter(FixCrLfFilter.class,
