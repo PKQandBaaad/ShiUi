@@ -6,9 +6,12 @@ on:
       - master
     paths-ignore:
       - '**/README.md'
+  workflow_dispatch:
+  merge_group:
+
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     if: ${{ !startsWith(github.event.head_commit.message, '[skip ci]') }}
 
     steps:
@@ -78,27 +81,27 @@ jobs:
           unzip out/sui-zygisk-*-release.zip -d sui-zygisk-release
           unzip out/sui-zygisk-*-debug.zip -d sui-zygisk-debug
       - name: Upload Riru release
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.prepareArtifact.outputs.riruReleaseName }}
           path: './sui-riru-release/*'
       - name: Upload Riru debug
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.prepareArtifact.outputs.riruDebugName }}
           path: './sui-riru-debug/*'
       - name: Upload Zygisk release
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.prepareArtifact.outputs.zygiskReleaseName }}
           path: './sui-zygisk-release/*'
       - name: Upload Zygisk debug
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.prepareArtifact.outputs.zygiskDebugName }}
           path: './sui-zygisk-debug/*'
       - name: Upload mappings
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: mappings
           path: |
