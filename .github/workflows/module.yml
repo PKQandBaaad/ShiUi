@@ -26,12 +26,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'gradle'
-      - name: Set up Android SDK, NDK & CMake
-        uses: android-actions/setup-android@v2
-        with:
-          api-level: 31
-          cmake: '3.10.2'
-          ndk: '21.4.7075529'
       - name: Cache Gradle Dependencies
         uses: actions/cache@v4
         with:
